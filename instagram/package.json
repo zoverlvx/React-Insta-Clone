@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "font-awesome": "^4.7.0",
-    "prop-types": "^15.6.1",
+    "prop-types": "^15.7.2",
     "react": "next",
     "react-dom": "next",
     "react-fontawesome": "^1.6.1",
