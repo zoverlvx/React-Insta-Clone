@@ -4,21 +4,21 @@ import PostHeader from './PostHeader';
 
 import './Posts.css';
 
-const Post = props => {
+const Post = ({post}) => {
   return (
     <div className="post-border">
       <PostHeader
-        username={props.post.username}
-        thumbnailUrl={props.post.thumbnailUrl}
+        username={post.username}
+        thumbnailUrl={post.thumbnailUrl}
       />
       <div className="post-image-wrapper">
         <img
           alt="post thumbnail"
           className="post-image"
-          src={props.post.imageUrl}
+          src={post.imageUrl}
         />
       </div>
-      <CommentSection comments={props.post.comments} />
+      <CommentSection comments={post.comments} />
     </div>
   );
 };
