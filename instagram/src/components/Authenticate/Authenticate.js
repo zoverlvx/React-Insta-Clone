@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 import HOC from "../tools/HOC";
 import Login from "../Login/Login";
 import PostsPage from "../PostsContainer/PostsPage";
