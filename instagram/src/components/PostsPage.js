@@ -21,6 +21,7 @@ function PostsPage() {
       		if (p.username.includes(e.target.value)) {
         		return p;
       		}
+			return null;
     	});
     	setState({ 
 		    posts: state.posts,
