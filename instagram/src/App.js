@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import Authenticate from "./authenticate/Authenticate";
+import Authenticate from "./components/Authenticate/Authenticate";
 
 function App() {
 	return (
