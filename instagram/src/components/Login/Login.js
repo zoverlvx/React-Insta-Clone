@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {Button, Form, FormGroup, Input} from "reactstrap";
 
 export default function Login({loggedIn}) {
 	const [username, setUsername] = useState("");
@@ -15,22 +16,36 @@ export default function Login({loggedIn}) {
 		loggedIn(true);
 	}
 
-
 	return (
-		<form onSubmit={submitUserAndPass}>
-			<input 
-				name="username" 
-				type="text" 
-				value={username} 
-				onChange={({target: {value}}) => setUsername(value)} 
-			/>
-			<input 
-				name="password" 
-				type="text" 
-				value={password}
-				onChange={({target: {value}}) => setPassword(value)} 
-			/>
-			<button>Login</button>
-		</form>
+		<Form className="login-form">
+			<h3>Welcome to React Insta Clone</h3>
+			<div>Please Login</div>
+			<FormGroup>
+				<Input
+					placeholder="User Name" 
+					name="username" 
+					type="text" 
+					value={username} 
+					onChange={({target: {value}}) => setUsername(value)} 
+				/>
+			</FormGroup>
+			<FormGroup>
+				<Input 
+					placeholder="Password"
+					name="password" 
+					type="password" 
+					value={password}
+					onChange={({target: {value}}) => setPassword(value)} 
+				/>
+			</FormGroup>
+			<br />
+			<Button 
+				color="success" 
+				size="large"
+				onClick={submitUserAndPass}
+			>
+				Login
+			</Button>
+		</Form>
 	)
 }
