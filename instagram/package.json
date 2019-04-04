@@ -8,7 +8,8 @@
     "react": "next",
     "react-dom": "next",
     "react-fontawesome": "^1.6.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "styled-components": "^4.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
