@@ -10,7 +10,7 @@ export default function Login({loggedIn}) {
 			alert("Please, submit username and password");
 			return null;
 		}
-		setState({username, password});
+		setState(Object(state, {username, password}));
 		localStorage.setItem(username, password);
 		loggedIn(true);
 	}
