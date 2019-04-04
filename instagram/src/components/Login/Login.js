@@ -3,7 +3,7 @@ import React, {useState} from "react";
 export default function Login({loggedIn}) {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
-	const [state, setState] = useState({});
+	const [state, setState] = useState({username, password});
 
 	function submitUserAndPass() {
 		if (username === "" || password === "") {

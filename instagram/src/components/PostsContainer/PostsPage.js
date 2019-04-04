@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import dummyData from '../dummy-data';
-import PostsContainer from './PostsContainer/PostsContainer';
-import SearchBar from './SearchBar/SearchBarContainer';
+import PostsContainer from './PostsContainer';
+import SearchBar from '../SearchBar/SearchBarContainer';
 
 function PostsPage() {
 	const [state, setState] = useState({
