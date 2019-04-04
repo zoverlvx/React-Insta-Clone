@@ -5,7 +5,6 @@ import CommentInput from './CommentInput';
 
 function CommentSection ({comments}) {
 	const [state, setState] = useState({comments, comment: ""});
-
 	function commentHandler(e) {
 		const name = {[e.target.name]: e.target.value}
 		setState({
