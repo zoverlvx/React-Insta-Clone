@@ -1,16 +1,18 @@
 import React, {useState} from "react";
 
-export default function Login() {
+export default function Login({loggedIn}) {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const [state, setState] = useState({});
-	
-	function handleChange(e, fn) {
-			fn(e.target.value);
-	}
 
 	function submitUserAndPass() {
+		if (username === "" || password === "") {
+			alert("Please, submit username and password");
+			return null;
+		}
 		setState({username, password});
+		localStorage.setItem(username, password);
+		loggedIn(true);
 	}
 
 
@@ -20,13 +22,13 @@ export default function Login() {
 				name="username" 
 				type="text" 
 				value={username} 
-				onChange={(e) => handleChange(e, setUsername)} 
+				onChange={({target: {value}}) => setUsername(value)} 
 			/>
 			<input 
 				name="password" 
 				type="text" 
 				value={password}
-				onChange={(e) => handleChange(e, setPassword)} 
+				onChange={({target: {value}}) => setPassword(value)} 
 			/>
 			<button>Login</button>
 		</form>
