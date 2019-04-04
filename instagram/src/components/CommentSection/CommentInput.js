@@ -10,7 +10,7 @@ const CommentForm = styled.form`
 const CommentInputField = styled.input`
 	border: none;
 	height: 100%;
-	width: 100%;
+	width: 80%;
 	padding: 0 15px;
 	
 	&:focus {
