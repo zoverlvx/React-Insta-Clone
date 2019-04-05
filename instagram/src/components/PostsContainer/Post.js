@@ -27,11 +27,16 @@ const Post = ({
 	}
 }) => {
 	const [state, setState] = useState({
+		liked: false,
 		likes: likes
 	});
 	function incrementLike() {
-	    let likes = state.likes + 1;
-	    setState({likes})
+		if(state.liked) {
+			setState({liked: false, likes: state.likes - 1})
+		}
+		if(!state.liked) {
+			setState({liked: true, likes: state.likes + 1})
+		}
 	}
 	
 	return (
@@ -47,6 +52,7 @@ const Post = ({
 			<LikeSection 
 				incrementLike={incrementLike} 
 				likes={state.likes}
+				liked={state.liked}
 			/>
 			<CommentSection comments={comments} />
 		</PostBorder>
