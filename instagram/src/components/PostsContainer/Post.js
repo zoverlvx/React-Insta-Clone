@@ -18,7 +18,7 @@ const PostImage = styled.img`
 `;
 
 const Post = ({
-	post: {
+	post: { id,
 			likes, 
 			username,
 			thumbnailUrl,
@@ -54,7 +54,10 @@ const Post = ({
 				likes={state.likes}
 				liked={state.liked}
 			/>
-			<CommentSection comments={comments} />
+			<CommentSection 
+				postId={id}
+				comments={comments} 
+			/>
 		</PostBorder>
 	);
 };

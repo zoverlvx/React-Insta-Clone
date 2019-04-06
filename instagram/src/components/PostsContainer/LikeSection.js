@@ -10,7 +10,6 @@ const LikeSectionDiv = styled.div`
 `;
 
 const LikeSection = props => {
-	console.log("Here are props on likesection", props)
   return [
     <FlexWrapper
       key="likes-icons-container"

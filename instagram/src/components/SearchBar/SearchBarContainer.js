@@ -22,10 +22,6 @@ const LogoImage = styled.img`
 	padding: 0px 15px;
 `;
 
-const Divider = styled.span`
-	width: 50px;
-`;
-
 const InputWrapper = styled.div`
 	width: 300px;
 	margin: auto;
