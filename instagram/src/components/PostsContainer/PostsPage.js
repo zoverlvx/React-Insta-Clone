@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import dummyData from '../dummy-data';
 import PostsContainer from './PostsContainer';
 import SearchBar from '../SearchBar/SearchBarContainer';
@@ -10,7 +10,7 @@ function PostsPage() {
 	});
 
 	function componentDidMount () {
-	    useEffect(() => setState({posts: dummyData, filteredPosts: []}), [])
+	    useLayoutEffect(() => setState({posts: dummyData, filteredPosts: []}), [])
 	    return null;
 	}
 
