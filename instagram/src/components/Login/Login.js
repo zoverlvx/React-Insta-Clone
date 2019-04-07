@@ -1,20 +1,31 @@
 import React, {useState} from "react";
-import {Button, Form, FormGroup, Input} from "reactstrap";
+import {Form, FormGroup, Input} from "reactstrap";
 import "./Login.css";
 
-export default function Login({loggedIn}) {
-	const [username, setUsername] = useState("");
-	const [password, setPassword] = useState("");
-	const [state, setState] = useState({username, password});
+function Button({func, text}) {
+	return <button onClick={func}>{text}</button>
+}
 
-	function submitUserAndPass() {
+export default function Login({login}) {
+	const [username, setUser] = useState("");
+	const [password, setPassword] = useState("");
+	{/*
+		Re-renders when input is incorrect. Bug.
+	*/}
+	function logIn() {
 		if (username === "" || password === "") {
 			alert("Please, submit username and password");
-			return null;
 		}
-		setState(Object(state, {username, password}));
-		localStorage.setItem(username, password);
-		loggedIn(true);
+		if(!localStorage.getItem(username)) {
+			alert("Username not found");
+		}
+		const isPassword = localStorage.getItem(username);
+		if(localStorage.getItem(username) && password === isPassword) {
+			login(true)
+		}
+		if(password !== isPassword) {
+			alert("Wrong username and password combination.");
+		}
 	}
 
 	return (
@@ -27,7 +38,7 @@ export default function Login({loggedIn}) {
 					name="username" 
 					type="text" 
 					value={username} 
-					onChange={({target: {value}}) => setUsername(value)} 
+					onChange={({target: {value}}) => setUser(value)} 
 				/>
 			</FormGroup>
 			<FormGroup>
@@ -41,9 +52,8 @@ export default function Login({loggedIn}) {
 			</FormGroup>
 			<br />
 			<Button 
-				color="success" 
-				size="large"
-				onClick={submitUserAndPass}
+				text="Log In"
+				func={logIn}
 			>
 				Login
 			</Button>
