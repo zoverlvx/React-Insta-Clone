@@ -9,9 +9,9 @@ function Button({func, text}) {
 export default function Login({login}) {
 	const [username, setUser] = useState("");
 	const [password, setPassword] = useState("");
-	{/*
-		Re-renders when input is incorrect. Bug.
-	*/}
+
+//		Re-renders when input is incorrect. Bug.
+
 	function logIn() {
 		if (username === "" || password === "") {
 			alert("Please, submit username and password");
