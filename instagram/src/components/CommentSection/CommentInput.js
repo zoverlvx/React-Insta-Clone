@@ -23,7 +23,7 @@ const CommentInput = (props) => {
 		<CommentForm 
 			onSubmit={props.submitComment}>
 			<CommentInputField
-				name="zoverlvx" 
+				name={props.user} 
 				type="text" 
 				placeholder="Add comment... " 
 				value={props.comment}

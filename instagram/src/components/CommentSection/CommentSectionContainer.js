@@ -31,7 +31,7 @@ function CommentSection (props) {
 		e.preventDefault();
 		const newComment = {
 			text: comment,
-			username: "zoverlvx"
+			username: props.user 
 		};
 		setComments([...comments, newComment]);
 		storeComments(props.postId, [...comments]);
@@ -42,6 +42,7 @@ function CommentSection (props) {
 		<div>
 			{comments.map((c, i) => <Comment key={i} comment={c} />)}
 			<CommentInput 
+				user={props.user}
 				comment={comment}
 				submitComment={handleCommentSubmit}
 				changeComment={commentHandler}/>
