@@ -18,6 +18,7 @@ const PostImage = styled.img`
 `;
 
 const Post = ({
+	user,
 	post: { id,
 			likes, 
 			username,
@@ -54,7 +55,8 @@ const Post = ({
 				likes={state.likes}
 				liked={state.liked}
 			/>
-			<CommentSection 
+			<CommentSection
+				user={user} 
 				postId={id}
 				comments={comments} 
 			/>
@@ -63,6 +65,7 @@ const Post = ({
 };
 
 Post.propTypes = {
+	user: PropTypes.string,
 	post: PropTypes.shape({
 		username: PropTypes.string,
 		thumbnailUrl: PropTypes.string,

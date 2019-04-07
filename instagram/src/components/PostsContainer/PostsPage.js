@@ -3,7 +3,7 @@ import dummyData from '../dummy-data';
 import PostsContainer from './PostsContainer';
 import SearchBar from '../SearchBar/SearchBarContainer';
 
-function PostsPage() {
+function PostsPage({user}) {
 	const [state, setState] = useState({
 		posts: [],
 		filteredPosts: []
@@ -11,7 +11,7 @@ function PostsPage() {
 
 	function componentDidMount () {
 	    useLayoutEffect(() => setState({posts: dummyData, filteredPosts: []}), [])
-	    return null;
+		return null;
 	}
 
 	componentDidMount();
@@ -33,6 +33,7 @@ function PostsPage() {
 		<div className="App">
 			<SearchBar searchPosts={searchPostsHandler}/>
 			<PostsContainer 
+				user={user}
 				posts={
 					state.filteredPosts.length > 0
 					? state.filteredPosts

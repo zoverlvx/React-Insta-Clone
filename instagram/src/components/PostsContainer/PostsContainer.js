@@ -10,10 +10,10 @@ const PostWrapper = styled.div`
 	margin: 5px auto;
 `;
 
-const PostsContainer = ({posts}) => {
+const PostsContainer = ({user, posts}) => {
   return (
 	<PostWrapper>
-      {posts.map(p => <Post key={p.imageUrl} post={p} />)}
+      {posts.map(p => <Post user={user} key={p.imageUrl} post={p} />)}
 	</PostWrapper>
   );
 };
